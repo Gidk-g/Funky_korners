@@ -1,0 +1,50 @@
+{
+	"storyName": "the guy who started this mess",
+	"difficulties": "",
+	"hideFreeplay": false,
+	"weekBackground": "korner",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"korner",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"copied",
+			"korner",
+			[
+				255,
+				233,
+				255
+			]
+		],
+		[
+			"cosplay",
+			"korner",
+			[
+				255,
+				233,
+				255
+			]
+		],
+		[
+			"lured",
+			"korner",
+			[
+				255,
+				233,
+				255
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Week Korner",
+	"hiddenUntilUnlocked": false
+}

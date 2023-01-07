@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				155,
+				270
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "wojtek-idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				155,
+				268
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "wojtek-down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				155,
+				323
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "wojtek-up",
+			"indices": []
+		},
+		{
+			"offsets": [
+				155,
+				268
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "wojtek-left"
+		},
+		{
+			"offsets": [
+				155,
+				268
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "wojtek-right"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/wojtk",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "wojtek",
+	"flip_x": false,
+	"healthbar_colors": [
+		153,
+		51,
+		204
+	],
+	"camera_position": [
+		-340,
+		-290
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

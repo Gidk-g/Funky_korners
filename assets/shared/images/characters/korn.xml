@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="korn.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="korner-down0000" x="0" y="0" width="467" height="594" pivotX="40.2" pivotY="-10.35" frameX="0" frameY="-12" frameWidth="467" frameHeight="606"/>
+	<SubTexture name="korner-down0001" x="0" y="0" width="467" height="594" frameX="0" frameY="-12" frameWidth="467" frameHeight="606"/>
+	<SubTexture name="korner-down0002" x="467" y="0" width="467" height="606"/>
+	<SubTexture name="korner-down0003" x="467" y="0" width="467" height="606"/>
+	<SubTexture name="korner-down0004" x="467" y="0" width="467" height="606"/>
+	<SubTexture name="korner-idle0000" x="934" y="0" width="467" height="610" pivotX="40.2" pivotY="8.85" frameX="0" frameY="-14" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0001" x="934" y="0" width="467" height="610" frameX="0" frameY="-14" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0002" x="934" y="0" width="467" height="610" frameX="0" frameY="-14" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0003" x="1401" y="0" width="467" height="619" frameX="0" frameY="-5" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0004" x="1401" y="0" width="467" height="619" frameX="0" frameY="-5" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0005" x="1401" y="0" width="467" height="619" frameX="0" frameY="-5" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0006" x="1868" y="0" width="467" height="623" frameX="0" frameY="-1" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0007" x="1868" y="0" width="467" height="623" frameX="0" frameY="-1" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0008" x="2335" y="0" width="467" height="624"/>
+	<SubTexture name="korner-idle0009" x="2335" y="0" width="467" height="624"/>
+	<SubTexture name="korner-idle0010" x="2335" y="0" width="467" height="624"/>
+	<SubTexture name="korner-idle0011" x="2802" y="0" width="467" height="621" frameX="0" frameY="-3" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0012" x="2802" y="0" width="467" height="621" frameX="0" frameY="-3" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0013" x="2802" y="0" width="467" height="621" frameX="0" frameY="-3" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0014" x="2802" y="0" width="467" height="621" frameX="0" frameY="-3" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0015" x="2802" y="0" width="467" height="621" frameX="0" frameY="-3" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0016" x="2802" y="0" width="467" height="621" frameX="0" frameY="-3" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0017" x="2802" y="0" width="467" height="621" frameX="0" frameY="-3" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-idle0018" x="2802" y="0" width="467" height="621" frameX="0" frameY="-3" frameWidth="467" frameHeight="624"/>
+	<SubTexture name="korner-left0000" x="3269" y="0" width="471" height="621" pivotX="44.1" pivotY="5.55"/>
+	<SubTexture name="korner-left0001" x="3269" y="0" width="471" height="621"/>
+	<SubTexture name="korner-left0002" x="0" y="624" width="467" height="621" frameX="-4" frameY="0" frameWidth="471" frameHeight="621"/>
+	<SubTexture name="korner-left0003" x="0" y="624" width="467" height="621" frameX="-4" frameY="0" frameWidth="471" frameHeight="621"/>
+	<SubTexture name="korner-left0004" x="0" y="624" width="467" height="621" frameX="-4" frameY="0" frameWidth="471" frameHeight="621"/>
+	<SubTexture name="korner-right0000" x="467" y="624" width="467" height="621" pivotX="40.2" pivotY="5.55"/>
+	<SubTexture name="korner-right0001" x="467" y="624" width="467" height="621"/>
+	<SubTexture name="korner-right0002" x="934" y="624" width="467" height="621"/>
+	<SubTexture name="korner-right0003" x="934" y="624" width="467" height="621"/>
+	<SubTexture name="korner-right0004" x="934" y="624" width="467" height="621"/>
+	<SubTexture name="korner-up0000" x="1401" y="624" width="467" height="659" pivotX="40.2" pivotY="43.85"/>
+	<SubTexture name="korner-up0001" x="1401" y="624" width="467" height="659"/>
+	<SubTexture name="korner-up0002" x="1868" y="624" width="467" height="644" frameX="0" frameY="-15" frameWidth="467" frameHeight="659"/>
+	<SubTexture name="korner-up0003" x="1868" y="624" width="467" height="644" frameX="0" frameY="-15" frameWidth="467" frameHeight="659"/>
+	<SubTexture name="korner-up0004" x="1868" y="624" width="467" height="644" frameX="0" frameY="-15" frameWidth="467" frameHeight="659"/>
+</TextureAtlas>

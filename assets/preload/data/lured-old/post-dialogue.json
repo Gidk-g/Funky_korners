@@ -1,0 +1,52 @@
+{
+	"dialogue": [
+		{
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue",
+			"boxState": "normal",
+			"expression": "imean",
+			"text": "Ok, you won."
+		},
+		{
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "beep"
+		},
+		{
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Im fine with this."
+		},
+		{
+			"sound": "kornersound",
+			"speed": 0.2,
+			"portrait": "kornerdialogue",
+			"boxState": "normal",
+			"expression": "imean",
+			"text": "But these guys don't."
+		},
+		{
+			"sound": "bf",
+			"speed": 0.3,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "?"
+		},
+		{
+			"sound": "gf",
+			"speed": 0.26,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "What guys?"
+		}
+	]
+}

@@ -1,0 +1,108 @@
+{
+	"dialogue": [
+		{
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue",
+			"boxState": "normal",
+			"expression": "imean",
+			"text": "Ok,  you beat me."
+		},
+		{
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "beep"
+		},
+		{
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "But that was only the beginning!"
+		},
+		{
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": ""
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": ""
+		},
+		{
+			"sound": "kornersound",
+			"speed": 0.035,
+			"portrait": "kornerdialogue",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "Yes! You haven't beat me YET!"
+		},
+		{
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "And if you'll beat me ONE, LAST, TIME."
+		},
+		{
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I'll get of your case!"
+		},
+		{
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "shocked",
+			"text": "beep"
+		},
+		{
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "But this time, im not gonna go easy on you."
+		},
+		{
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Ready?"
+		},
+		{
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "beep"
+		},
+		{
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I hope so."
+		}
+	]
+}

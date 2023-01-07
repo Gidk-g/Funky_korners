@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				267,
+				-30
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Kaczak right"
+		},
+		{
+			"offsets": [
+				230,
+				-30
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Kaczak idle"
+		},
+		{
+			"offsets": [
+				232,
+				-31
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Kaczak left"
+		},
+		{
+			"offsets": [
+				229,
+				-32
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Kaczak down"
+		},
+		{
+			"offsets": [
+				230,
+				-28
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Kaczak up"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Kaczak",
+	"position": [
+		270,
+		50
+	],
+	"healthicon": "kaczak",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		244,
+		68
+	],
+	"camera_position": [
+		-220,
+		0
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

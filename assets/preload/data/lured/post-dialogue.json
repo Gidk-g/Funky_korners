@@ -1,0 +1,52 @@
+{
+	"dialogue": [
+		{
+			"expression": "imean",
+			"text": "Ok, you've won.",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "talk",
+			"text": "beep",
+			"boxState": "normal",
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "talk",
+			"text": "Im fine with this.",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "imean",
+			"text": "But HE's not.",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.2,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "talk",
+			"text": "?",
+			"boxState": "normal",
+			"sound": "bf",
+			"speed": 0.3,
+			"portrait": "bf"
+		},
+		{
+			"expression": "confused",
+			"text": "Who's HE?",
+			"boxState": "normal",
+			"sound": "gf",
+			"speed": 0.26,
+			"portrait": "gf"
+		}
+	]
+}
