@@ -87,7 +87,7 @@ class CreditsState extends MusicBeatState
 			['Juliaaa','juliaaa','Co-Owner and an Additional Artist','https://www.youtube.com/channel/UCeiT__4zvlqcEYjcYE55bcg','FF5EEB'],
 			['Wipek','wipek','Main Animator and an Main Artist','https://www.youtube.com/channel/UCgPNGHzDIEVS4w_MrOk1qow','CC66CC'],
 			['Gidk','gidk','Speedrun Programmer','https://www.youtube.com/channel/UCZu360PL3Nr-ppBmmmZhS2w','FFFFFF'],
-			['Anvitar','anvitar','Additional Artist','https://www.youtube.com/channel/UCBiLf4y2xi7UBOxNr1zEpXg','D7A258'],
+			['Anvitar','anvitar','Additional Artist','https://www.youtube.com/channel/UCBiLf4y2xi7UBOxNr1zEpXg','D79B5E'],
 			['Fr4nk','frank','Additional Composer','https://www.youtube.com/channel/UCc4NAsWMfjW_1jDrevYUe8A','404040'],
 			['Hooovie','hooovie','Additional Charter ','https://www.youtube.com/c/Hooovy','ADC2FF'],
 			['Bonky','bonky','Additional Composer','https://www.youtube.com/channel/UCGwMFusR_JC1sX-nM8FyB_A','FFD8B2'],
