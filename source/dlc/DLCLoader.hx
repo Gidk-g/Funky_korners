@@ -24,7 +24,7 @@ class DLCLoader
 			dlc_dirs.push(meta.id);
 		}
 
-		if(FlxG.save.data.dlc)
+		if(FlxG.save.data.dlc == null)
 			dlc_dirs = [];
 
         var parse_rules:ParseRules = ParseRules.getDefault();

@@ -59,7 +59,6 @@ typedef StageObject =
 {
 	var name:Null<String>;
 	var image:Null<String>;
-	var imageDirectory:Null<String>;
 	var position:Null<Array<Float>>;
 	var scrollFactor:Null<Array<Float>>;
 	var scale:Null<Array<Float>>;
@@ -75,7 +74,6 @@ typedef StageObject =
 
 class StageData {
 	public static var forceNextDirectory:String = null;
-    public static var objectMap:Map<String, korner.FNFSprite> = new Map<String, korner.FNFSprite>();
 
 	public static function loadDirectory(SONG:SwagSong) {
 		var stage:String = '';
@@ -107,70 +105,11 @@ class StageData {
 			stage = 'stage';
 		}
 
-        reloadJson();
-
 		var stageFile:StageFile = getStageFile(stage);
-		if(stageFile == null) { //preventing crashes
+		if(stageFile == null) {
 			forceNextDirectory = '';
 		} else {
 			forceNextDirectory = stageFile.directory;
-		}
-	}
-
-	public static function reloadJson()
-	{
-        var stageJson:StageFile = getStageFile(PlayState.curStage);
-		if (stageJson != null)
-		{
-			if (stageJson.objects != null)
-			{
-				for (object in stageJson.objects)
-				{
-					var createdSprite:korner.FNFSprite = new korner.FNFSprite(object.position[0], object.position[1]);
-
-					var directory:String = object.imageDirectory != null ? object.imageDirectory : 'stages/$PlayState.curStage';
-
-					if (object.animations != null)
-					{
-						createdSprite.frames = Paths.getSparrowAtlas(object.image, directory);
-						for (anim in object.animations)
-							createdSprite.animation.addByPrefix(anim[0], anim[1], anim[2], anim[3]);
-						if (object.defaultAnimation != null)
-							createdSprite.playAnim(object.defaultAnimation);
-					}
-					else
-						createdSprite.loadGraphic(Paths.image(object.image, directory));
-
-					if (object.scrollFactor != null)
-						createdSprite.scrollFactor.set(object.scrollFactor[0], object.scrollFactor[1]);
-					if (object.size != null)
-						createdSprite.setGraphicSize(Std.int(createdSprite.width * object.size));
-					if (object.scale != null)
-					{
-						createdSprite.scale.x = object.scale[0];
-						createdSprite.scale.y = object.scale[1];
-					}
-
-					createdSprite.flipX = object.flipX;
-					createdSprite.flipY = object.flipY;
-					createdSprite.antialiasing = object.antialiasing;
-
-					if (object.blend != null)
-						createdSprite.blend = CoolUtil.returnBlendMode(object.blend);
-
-					if (object.name != null && createdSprite != null)
-						objectMap.set(object.name, createdSprite);
-					switch (object.layer)
-					{
-						case 'layers' | 'on layers' | 'gf' | 'above gf':
-							Stage.instance.layers.add(createdSprite);
-						case 'foreground' | 'on foreground' | 'chars' | 'above chars':
-							Stage.instance.foreground.add(createdSprite);
-						default:
-							PlayState.instance.add(createdSprite);
-					}
-				}
-			}
 		}
 	}
 
@@ -206,14 +145,14 @@ class Stage extends FlxTypedGroup<FlxBasic>
 
 	public var curStage:String;
 
-	var daPixelZoom = PlayState.daPixelZoom;
-
 	public var foreground:FlxTypedGroup<FlxBasic>;
 	public var layers:FlxTypedGroup<FlxBasic>;
 
 	public var spawnGirlfriend:Bool = true;
 
 	public var stageScript:ScriptHandler;
+
+    public static var objectMap:Map<String, korner.FNFSprite> = new Map<String, korner.FNFSprite>();
 
 	public function new(curStage)
 	{
@@ -227,18 +166,16 @@ class Stage extends FlxTypedGroup<FlxBasic>
 
 		PlayState.curStage = PlayState.SONG.stage;
 
-		// to apply to foreground use foreground.add(); instead of add();
 		foreground = new FlxTypedGroup<FlxBasic>();
 		layers = new FlxTypedGroup<FlxBasic>();
+
+        reloadJson();
 
 		switch (curStage)
 		{
 			default:
 				curStage = 'unknown';
-				// PlayState.instance.defaultCamZoom = 0.9;
 		}
-
-        StageData.reloadJson();
 
 		try
 		{
@@ -247,6 +184,65 @@ class Stage extends FlxTypedGroup<FlxBasic>
 		catch (e)
 		{
 			lime.app.Application.current.window.alert('$e in Stage Script', "Stage Error!");
+		}
+	}
+
+	public function reloadJson()
+	{
+		var stageJson:StageFile = StageData.getStageFile(PlayState.curStage);
+	
+		if (stageJson != null)
+		{
+			if (stageJson.objects != null)
+			{
+				for (object in stageJson.objects)
+				{
+					var createdSprite:korner.FNFSprite = new korner.FNFSprite(object.position[0], object.position[1]);
+
+					if (object.animations != null)
+					{
+						createdSprite.frames = Paths.getSparrowAtlas(object.image);
+					    for (anim in object.animations)
+							createdSprite.animation.addByPrefix(anim[0], anim[1], anim[2], anim[3]);
+						if (object.defaultAnimation != null)
+							createdSprite.playAnim(object.defaultAnimation);
+					}
+					else
+						createdSprite.loadGraphic(Paths.image(object.image));
+
+					if (object.scrollFactor != null)
+						createdSprite.scrollFactor.set(object.scrollFactor[0], object.scrollFactor[1]);
+
+					if (object.size != null)
+						createdSprite.setGraphicSize(Std.int(createdSprite.width * object.size));
+
+					if (object.scale != null)
+					{
+						createdSprite.scale.x = object.scale[0];
+						createdSprite.scale.y = object.scale[1];
+					}
+
+					createdSprite.flipX = object.flipX;
+					createdSprite.flipY = object.flipY;
+					createdSprite.antialiasing = object.antialiasing;
+
+					if (object.blend != null)
+						createdSprite.blend = CoolUtil.returnBlendMode(object.blend);
+
+					if (object.name != null && createdSprite != null)
+						objectMap.set(object.name, createdSprite);
+
+					switch (object.layer)
+					{
+						case 'layers' | 'on layers' | 'gf' | 'above gf':
+							Stage.instance.layers.add(createdSprite);
+						case 'foreground' | 'on foreground' | 'chars' | 'above chars':
+							Stage.instance.foreground.add(createdSprite);
+						default:
+							PlayState.instance.add(createdSprite);
+					}
+				}
+			}
 		}
 	}
 
@@ -294,8 +290,8 @@ class Stage extends FlxTypedGroup<FlxBasic>
 		{
         	if (FileSystem.exists(path))
             	stageScript = new ScriptHandler(path);
-			// if (Assets.exists(path))
-            	// stageScript = new ScriptHandler(path);
+			if (Assets.exists(path))
+            	stageScript = new ScriptHandler(path);
 		}
 
 		setVar('add', add);
@@ -305,13 +301,21 @@ class Stage extends FlxTypedGroup<FlxBasic>
 		setVar('foreground', foreground);
 		setVar('layers', layers);
 		setVar('gfVersion', gfVersion);
+
 		setVar('spawnGirlfriend', function(blah:Bool)
 		{
 			spawnGirlfriend = blah;
 		});
+
 		setVar('BackgroundDancer', BackgroundDancer);
 		setVar('BackgroundGirls', BackgroundGirls);
 		setVar('TankmenBG', TankmenBG);
+
+		setVar('getObject', function(object:String)
+		{
+			var gottenObject:korner.FNFSprite = objectMap.get(object);
+			return gottenObject;
+		});
 
 		callFunc('onCreate', []);
 	}
