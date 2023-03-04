@@ -15,7 +15,7 @@ function onCreatePost()
 
 
 
-    makeLuaText('songText', "Kolze - Copied", 400, getProperty('bgThing.x') + 180, 320)
+    makeLuaText('songText', "Kolze - Copy Cat", 400, getProperty('bgThing.x') + 180, 320)
     setObjectCamera("songText", 'other');
     setTextColor('songText', '0xffffff')
     setTextSize('songText', 30);

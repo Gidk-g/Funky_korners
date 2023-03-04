@@ -874,6 +874,11 @@ class PlayState extends MusicBeatState
 			introSoundsSuffix = '-korner';
 		}
 
+		if(SONG.song.toLowerCase() == 'copy-cat')
+		{
+			introSoundsSuffix = '-korner';
+		}
+
 		if(SONG.song.toLowerCase() == 'mistletoe')
 		{
 			introSoundsSuffix = '-korner';

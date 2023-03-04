@@ -75,6 +75,13 @@ class DefaultSongData
 						artistName = 'Kolze';
 						formattedName = 'Christmas';
 				}
+			case 'copy-cat':
+				switch(StringTools.replace(song, " ", "-").toLowerCase())
+				{
+					case 'copy-cat':
+						artistName = 'Kolze';
+						formattedName = 'Copy Cat';
+				}
 		}
 
 		switch(type.toLowerCase())

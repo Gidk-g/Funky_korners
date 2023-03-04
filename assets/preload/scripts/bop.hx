@@ -29,6 +29,11 @@ function onCreatePost()
         add(roner);
     }
 
+    if(PlayState.SONG.song.toLowerCase() == 'copy-cat') {
+        add(bober);
+        add(roner);  
+    }
+
     if(PlayState.SONG.song.toLowerCase() == 'ushanka') {
         add(korner);
     }
