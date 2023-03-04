@@ -32,7 +32,7 @@ class MusicBeatState extends FlxUIState
 	override function create() {
 		var skip:Bool = FlxTransitionableState.skipNextTransOut;
 
-		dlc.DLCLoader.reloadDLC();
+		dlc.ModLoader.reloadMods();
 
 		#if polymod
 		@:privateAccess

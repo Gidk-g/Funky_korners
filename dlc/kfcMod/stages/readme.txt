@@ -1,1 +1,1 @@
-stages lua
+stages

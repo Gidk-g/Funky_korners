@@ -11,7 +11,7 @@ class CustomJSONParse extends JSONParseFormat
         if (Std.isOfType(a, Array) && Std.isOfType(b, Array))
         {
             // if they are both arrays, merge the values cuz fuck you regular polymod :3
-
+            
             var c:Array<Dynamic> = [];
 
             var d:Array<Dynamic> = a;
@@ -55,7 +55,7 @@ class CustomJSONParse extends JSONParseFormat
                         var aValue = Reflect.field(a, field);
                         var bValue = Reflect.field(b, field);
                         var mergedValue = copyVal(_mergeObjects(aValue, bValue, '$signatureSoFar.$field'));
-
+                        
                         Reflect.setField(a, field, mergedValue);
                     }
                     else

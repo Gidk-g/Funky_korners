@@ -1,38 +1,36 @@
 package dlc;
 
 import flixel.FlxG;
-import dlc.CustomJSONParse;
 
 #if polymod
 import polymod.format.ParseRules;
 #end
 
-class DLCLoader
+class ModLoader
 {
-    public static var dlc_dirs:Array<String> = [];
+    public static var mod_dirs:Array<String> = [];
 
-	public static function reloadDLC()
+	public static function reloadMods()
 	{
 		#if polymod
         polymod.PolymodConfig.modMetadataFile = "pack.json";
         polymod.PolymodConfig.modIconFile = "pack.png";
 
-		dlc_dirs = [];
+		mod_dirs = [];
 
 		for(meta in polymod.Polymod.scan("dlc"))
 		{
-			dlc_dirs.push(meta.id);
+			mod_dirs.push(meta.id);
 		}
 
-		if(FlxG.save.data.dlc == null)
-			dlc_dirs = [];
+        mod_dirs = [];
 
         var parse_rules:ParseRules = ParseRules.getDefault();
         parse_rules.addFormat("json", new CustomJSONParse());
 
-        polymod.Polymod.init({
+		polymod.Polymod.init({
 			modRoot: "dlc",
-			dirs: dlc_dirs,
+			dirs: mod_dirs,
 			framework: OPENFL,
 			errorCallback: function(error:polymod.Polymod.PolymodError)
 			{
@@ -45,8 +43,7 @@ class DLCLoader
 					"songs" => "songs",
 					"shared" => "shared"
 				]
-			},
-            parseRules: parse_rules
+			}
 		});
 		#end
 	}

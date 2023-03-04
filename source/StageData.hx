@@ -235,9 +235,9 @@ class Stage extends FlxTypedGroup<FlxBasic>
 					switch (object.layer)
 					{
 						case 'layers' | 'on layers' | 'gf' | 'above gf':
-							Stage.instance.layers.add(createdSprite);
+							layers.add(createdSprite);
 						case 'foreground' | 'on foreground' | 'chars' | 'above chars':
-							Stage.instance.foreground.add(createdSprite);
+							foreground.add(createdSprite);
 						default:
 							PlayState.instance.add(createdSprite);
 					}

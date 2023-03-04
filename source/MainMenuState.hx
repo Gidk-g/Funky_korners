@@ -25,7 +25,6 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import lime.app.Application;
-import Achievements;
 import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
 import flixel.util.FlxColor;
@@ -39,13 +38,10 @@ class MainMenuState extends MusicBeatState
 	public static var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
+
 	private var camGame:FlxCamera;
-	private var camAchievement:FlxCamera;
-	
-	var optionShit:Array<String> = [
 
-
-	];
+	var optionShit:Array<String> = [];
 
 	var magenta:FlxSprite;
 	var credits:FlxSprite;
@@ -61,19 +57,13 @@ class MainMenuState extends MusicBeatState
 	var ez:FlxUISpriteButton;
 	var creditshit:FlxUISpriteButton;
 	var debugKeys:Array<FlxKey>;
-	
-
 
 	public var mouseQuant:Bool = false;
 
-
 	public var menuScript:ScriptHandler;
 
-
 	override function create()
-
 	{
-
 		WeekSaves.fuckinSet();
 
 		FlxG.mouse.visible = true;
@@ -87,11 +77,8 @@ class MainMenuState extends MusicBeatState
 		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 
 		camGame = new FlxCamera();
-		camAchievement = new FlxCamera();
-		camAchievement.bgColor.alpha = 0;
 
 		FlxG.cameras.reset(camGame);
-		FlxG.cameras.add(camAchievement);
 		FlxCamera.defaultCameras = [camGame];
 
 		transIn = FlxTransitionableState.defaultTransIn;
@@ -149,9 +136,7 @@ class MainMenuState extends MusicBeatState
 		korner.updateHitbox();
 		korner.antialiasing = ClientPrefs.globalAntialiasing;
 		add(korner);
-
-
-			
+	
 		kornerhit = new FlxUISpriteButton(500, 150, magenta, clickKorner);
 		kornerhit.setGraphicSize(Std.int(kornerhit.width * 3));
 		kornerhit.updateHitbox();
@@ -220,8 +205,6 @@ class MainMenuState extends MusicBeatState
 		
 		// magenta.scrollFactor.set();
 
-
-
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
 
@@ -250,29 +233,12 @@ class MainMenuState extends MusicBeatState
 			menuItem.updateHitbox();
 		}
 
-
-
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "Korner\'s Funky Club", 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
-		// NG.core.calls.event.logEvent('swag').send();
-
 		changeItem();
-
-		#if ACHIEVEMENTS_ALLOWED
-		Achievements.loadAchievements();
-		var leDate = Date.now();
-		if (leDate.getDay() == 5 && leDate.getHours() >= 18) {
-			var achieveID:Int = Achievements.getAchievementIndex('friday_night_play');
-			if(!Achievements.isAchievementUnlocked(Achievements.achievementsStuff[achieveID][2])) { //It's a friday night. WEEEEEEEEEEEEEEEEEE
-				Achievements.achievementsMap.set(Achievements.achievementsStuff[achieveID][2], true);
-				giveAchievement();
-				ClientPrefs.saveSettings();
-			}
-		}
-		#end
 
 		super.create();
 	}
@@ -280,29 +246,26 @@ class MainMenuState extends MusicBeatState
 	function clickOptions() {
 		MusicBeatState.switchState(new options.OptionsState());
 	}
+
 	function clickCredits() {
 		MusicBeatState.switchState(new CreditsState());
 	}
+
 	function clickKorner() {
 		MusicBeatState.switchState(new KornerState());
 	}
+
 	function clickWojti() {
 		MusicBeatState.switchState(new WojtiState());
 	}
+
 	function clickChristmas() {
 		MusicBeatState.switchState(new ChristmasState());
 	}
+
 	function neverGonna() {
 		CoolUtil.browserLoad('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 	}
-	#if ACHIEVEMENTS_ALLOWED
-	// Unlocks "Freaky on a Friday Night" achievement
-	function giveAchievement() {
-		add(new AchievementObject('friday_night_play', camAchievement));
-		FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
-		trace('Giving achievement "friday_night_play"');
-	}
-	#end
 
 	var selectedSomethin:Bool = false;
 
@@ -318,20 +281,21 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
 
-		var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);
+		if (FlxG.keys.justPressed.D)
+	 	{
+			MusicBeatState.switchState(new FreeplayState());
+		}
 
+		var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);
 
 		if (!selectedSomethin)
 		{
-
 			if (controls.BACK)
 			{
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				MusicBeatState.switchState(new TitleState());
 			}
-
-
 			#if desktop
 			else if (FlxG.keys.anyJustPressed(debugKeys))
 			{
