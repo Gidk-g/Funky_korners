@@ -1224,6 +1224,26 @@ class PlayState extends MusicBeatState
 			#end
 		}
 		#end
+		for (event in eventPushedMap.keys())
+		{
+			var paths:Array<String> = [
+				Paths.getPreloadPath('custom_events/$event.hx'),
+				Paths.getPreloadPath('custom_events/$event.hxs'),
+				Paths.getPreloadPath('custom_events/$event.hsc'),
+				Paths.getPreloadPath('custom_events/$event.hscript')
+			];
+
+			for (path in paths)
+			{
+				for (i in scriptArray)
+				{
+					if (Assets.exists(path))
+					    i = new ScriptHandler(path);
+					if (FileSystem.exists(path))
+					    i = new ScriptHandler(path);
+				}
+			}
+		}
 		noteTypeMap.clear();
 		noteTypeMap = null;
 		eventPushedMap.clear();
@@ -5229,6 +5249,8 @@ class PlayState extends MusicBeatState
 
 	function setPlayStateVars()
 	{
+		setVar('this', this);
+
 		setVar('add', add);
 		setVar('kill', kill);
 		setVar('remove', remove);

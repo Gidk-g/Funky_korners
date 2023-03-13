@@ -113,11 +113,6 @@ class ScriptHandler extends SScript
 		#else
 		set('platform', 'unknown');
 		#end
-
-		set('getVarFromClass', function(instance:String, variable:String)
-		{
-			Reflect.field(Type.resolveClass(instance), variable);
-		});
 	}
 
 	public static function callScripts(array:Array<ScriptHandler>)
