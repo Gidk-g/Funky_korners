@@ -113,6 +113,11 @@ class ScriptHandler extends SScript
 		#else
 		set('platform', 'unknown');
 		#end
+
+		set('getColorFromRGB', function(r:Int, g:Int, b:Int)
+		{
+			return FlxColor.fromRGB(r, b, g);
+		});
 	}
 
 	public static function callScripts(array:Array<ScriptHandler>)
