@@ -4,8 +4,6 @@ var canSomeoneWalk:Bool = true;
 
 function onCreate()
 {
-    curStage = 'date';
-
     var slonce:BGSprite = new BGSprite('date/slonce', -400, -600, 0.9, 0.9);
     slonce.setGraphicSize(Std.int(slonce.width * 1.2));
     slonce.antialiasing = ClientPrefs.globalAntialiasing;

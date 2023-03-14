@@ -2,8 +2,6 @@ var pow:BGSprite;
 
 function onCreate()
 {
-	curStage = 'ohio';
-
 	var bg:BGSprite = new BGSprite('ohio/chmury', -600, -300, 1, 1);
 	bg.setGraphicSize(Std.int(bg.width * 1.5));
 	bg.antialiasing = ClientPrefs.globalAntialiasing;

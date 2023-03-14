@@ -161,21 +161,18 @@ class Stage extends FlxTypedGroup<FlxBasic>
 		instance = this;
 		this.curStage = curStage;
 
-		if (curStage == null || curStage.length < 1)
-			curStage = 'unknown';
-
-		PlayState.curStage = PlayState.SONG.stage;
-
 		foreground = new FlxTypedGroup<FlxBasic>();
 		layers = new FlxTypedGroup<FlxBasic>();
 
-        reloadJson();
-
-		switch (curStage)
+		if (curStage == null || curStage.length < 1)
 		{
-			default:
+			if (PlayState.SONG.stage == null || PlayState.SONG.stage.length < 1)
 				curStage = 'unknown';
+			else
+				curStage = PlayState.SONG.stage;
 		}
+
+        reloadJson();
 
 		try
 		{

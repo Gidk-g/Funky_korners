@@ -4,8 +4,6 @@ var danceLeft:Bool = false;
 
 function onCreate()
 {
-    curStage = 'korner';
-
     var sciana:BGSprite = new BGSprite('scana', -737, -125, 1, 1);
     sciana.setGraphicSize(2908, 2908);
     sciana.antialiasing = ClientPrefs.globalAntialiasing;
