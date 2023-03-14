@@ -56,7 +56,6 @@ class ScriptHandler extends SScript
 		set('FlxMath', FlxMath);
 		set('FlxSound', FlxSound);
 		set('FlxGroup', FlxGroup);
-		set('FlxColor', FlxColor);
 		set('FlxTypedGroup', FlxTypedGroup);
 		set('FlxSpriteGroup', FlxSpriteGroup);
 		set('FlxTypedSpriteGroup', FlxTypedSpriteGroup);
@@ -114,11 +113,6 @@ class ScriptHandler extends SScript
 		#else
 		set('platform', 'unknown');
 		#end
-
-		set('getColorFromRGB', function(r:Int, g:Int, b:Int)
-		{
-			return FlxColor.fromRGB(r, b, g);
-		});
 	}
 
 	public static function callScripts(array:Array<ScriptHandler>)
