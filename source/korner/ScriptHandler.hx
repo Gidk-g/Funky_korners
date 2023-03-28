@@ -114,6 +114,13 @@ class ScriptHandler extends SScript
 		#else
 		set('platform', 'unknown');
 		#end
+
+		set('triggerEvent', function(name:String, arg1:Dynamic, arg2:Dynamic) {
+			var value1:String = arg1;
+			var value2:String = arg2;
+			PlayState.instance.triggerEventNote(name, value1, value2);
+			return true;
+		});
 	}
 
 	public static function callScripts(array:Array<ScriptHandler>)

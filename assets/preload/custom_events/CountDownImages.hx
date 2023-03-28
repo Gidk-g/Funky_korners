@@ -1,5 +1,5 @@
 function onEvent(eventName, value1, value2) {
-    if(eventName== 'CountDownImages') {
+    if(eventName == 'CountDownImages') {
         var countDownImage:FlxSprite = new FlxSprite().loadGraphic(Paths.image(value1));
         countDownImage.cameras = [this.camHUD];
         countDownImage.scrollFactor.set();
