@@ -30,6 +30,7 @@ class ScriptHandler extends SScript
 	{
 		super(file, preset);
 		traces = false;
+		trace('hx file loaded succesfully:' + file);
 	}
 
 	override public function preset():Void
