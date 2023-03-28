@@ -37,7 +37,8 @@ import openfl.utils.Assets;
 
 using StringTools;
 
-typedef StageFile = {
+typedef StageFile =
+{
 	var directory:String;
 	var defaultZoom:Float;
 	var isPixelStage:Bool;
@@ -72,7 +73,8 @@ typedef StageObject =
 	var antialiasing:Bool;
 }
 
-class StageData {
+class StageData
+{
 	public static var forceNextDirectory:String = null;
 
 	public static function loadDirectory(SONG:SwagSong) {
@@ -286,8 +288,6 @@ class Stage extends FlxTypedGroup<FlxBasic>
 		for (path in paths)
 		{
         	if (FileSystem.exists(path))
-            	stageScript = new ScriptHandler(path);
-			if (Assets.exists(path))
             	stageScript = new ScriptHandler(path);
 		}
 
