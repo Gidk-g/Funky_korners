@@ -1,6 +1,7 @@
 package;
 
-import korner.ScriptHandler;
+import Song;
+import haxe.Json;
 import sys.FileSystem;
 import flixel.FlxBasic;
 import flixel.FlxCamera;
@@ -24,9 +25,8 @@ import openfl.Assets;
 import openfl.display.BlendMode;
 import openfl.display.GraphicsShader;
 import openfl.filters.ShaderFilter;
-import haxe.Json;
+import korner.ScriptHandler;
 import haxe.format.JsonParser;
-import Song;
 
 #if MODS_ALLOWED
 import sys.io.File;
@@ -77,11 +77,16 @@ class StageData
 {
 	public static var forceNextDirectory:String = null;
 
-	public static function loadDirectory(SONG:SwagSong) {
+	public static function loadDirectory(SONG:SwagSong)
+	{
 		var stage:String = '';
-		if(SONG.stage != null) {
+
+		if(SONG.stage != null)
+		{
 			stage = SONG.stage;
-		} else if(SONG.song != null) {
+		}
+		else if(SONG.song != null)
+		{
 			switch (SONG.song.toLowerCase().replace(' ', '-'))
 			{
 				case 'spookeez' | 'south' | 'monster':
@@ -103,38 +108,37 @@ class StageData
 				default:
 					stage = 'stage';
 			}
-		} else {
+		} 
+	    else
+		{
 			stage = 'stage';
 		}
 
 		var stageFile:StageFile = getStageFile(stage);
-		if(stageFile == null) {
+
+		if(stageFile == null)
 			forceNextDirectory = '';
-		} else {
+		else
 			forceNextDirectory = stageFile.directory;
-		}
 	}
 
-	public static function getStageFile(stage:String):StageFile {
+	public static function getStageFile(stage:String):StageFile
+	{
 		var rawJson:String = null;
 		var path:String = Paths.getPreloadPath('stages/' + stage + '.json');
 
 		#if MODS_ALLOWED
 		var modPath:String = Paths.modFolders('stages/' + stage + '.json');
-		if(FileSystem.exists(modPath)) {
+		if(FileSystem.exists(modPath))
 			rawJson = File.getContent(modPath);
-		} else if(FileSystem.exists(path)) {
+		else if(FileSystem.exists(path))
 			rawJson = File.getContent(path);
-		}
 		#else
-		if(Assets.exists(path)) {
+		if(Assets.exists(path))
 			rawJson = Assets.getText(path);
-		}
 		#end
 		else
-		{
 			return null;
-		}
 		return cast Json.parse(rawJson);
 	}
 }
