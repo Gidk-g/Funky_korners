@@ -281,7 +281,7 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
 
-		if (FlxG.keys.justPressed.D)
+		if (FlxG.keys.justPressed.F)
 	 	{
 			MusicBeatState.switchState(new FreeplayState());
 		}

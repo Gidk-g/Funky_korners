@@ -836,7 +836,6 @@ class PlayState extends MusicBeatState
 		else
 			curStage = 'unknown';
 
-		ScriptHandler.callScripts(scriptArray);
 		callFunc('onCreate', []);
 
 		setVar('add', this.add);
@@ -994,6 +993,33 @@ class PlayState extends MusicBeatState
 			}
 		}
 		#end
+
+		var filesPushed:Array<String> = [];
+		var foldersToCheck:Array<String> = [Paths.getPreloadPath('scripts/')];
+
+		#if MODS_ALLOWED
+		foldersToCheck.insert(0, Paths.mods('scripts/'));
+		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
+			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/scripts/'));
+
+		for(mod in Paths.getGlobalMods())
+			foldersToCheck.insert(0, Paths.mods(mod + '/scripts/'));
+		#end
+
+		for (folder in foldersToCheck)
+		{
+			if(FileSystem.exists(folder))
+			{
+				for (file in FileSystem.readDirectory(folder))
+				{
+					if(file.endsWith('.hx') && !filesPushed.contains(file))
+					{
+						scriptArray.push(new ScriptHandler(folder + file));
+						filesPushed.push(file);
+					}
+				}
+			}
+		}
 
 		// STAGE SCRIPTS
 		#if (MODS_ALLOWED && LUA_ALLOWED)
@@ -1239,20 +1265,27 @@ class PlayState extends MusicBeatState
 		#end
 		for (event in eventPushedMap.keys())
 		{
-			var paths:Array<String> = [
-				Paths.getPreloadPath('custom_events/$event.hx'),
-				Paths.getPreloadPath('custom_events/$event.hxs'),
-				Paths.getPreloadPath('custom_events/$event.hsc'),
-				Paths.getPreloadPath('custom_events/$event.hscript')
-			];
-
-			for (path in paths)
+			#if MODS_ALLOWED
+			var hxToLoad:String = Paths.modFolders('custom_events/' + event + '.hx');
+			if(FileSystem.exists(hxToLoad))
 			{
-				if(FileSystem.exists(path))
+				scriptArray.push(new ScriptHandler(hxToLoad));
+			}
+			else
+			{
+				hxToLoad = Paths.getPreloadPath('custom_events/' + event + '.hx');
+				if(FileSystem.exists(hxToLoad))
 				{
-					scriptArray.push(new ScriptHandler(path));
+					scriptArray.push(new ScriptHandler(hxToLoad));
 				}
 			}
+			#elseif sys
+			var hxToLoad:String = Paths.getPreloadPath('custom_events/' + event + '.hx');
+			if(OpenFlAssets.exists(hxToLoad))
+			{
+				scriptArray.push(new ScriptHandler(hxToLoad));
+			}
+			#end
 		}
 		noteTypeMap.clear();
 		noteTypeMap = null;
@@ -1394,7 +1427,35 @@ class PlayState extends MusicBeatState
 		}
 		#end
 
+		var filesPushed:Array<String> = [];
+		var foldersToCheck:Array<String> = [Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/')];
+
+		#if MODS_ALLOWED
+		foldersToCheck.insert(0, Paths.mods('data/' + Paths.formatToSongPath(SONG.song) + '/'));
+		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
+			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/data/' + Paths.formatToSongPath(SONG.song) + '/'));
+
+		for(mod in Paths.getGlobalMods())
+			foldersToCheck.insert(0, Paths.mods(mod + '/data/' + Paths.formatToSongPath(SONG.song) + '/' ));// using push instead of insert because these should run after everything else
+		#end
+
+		for (folder in foldersToCheck)
+		{
+			if(FileSystem.exists(folder))
+			{
+				for (file in FileSystem.readDirectory(folder))
+				{
+					if(file.endsWith('.hx') && !filesPushed.contains(file))
+					{
+						scriptArray.push(new ScriptHandler(folder + file));
+						filesPushed.push(file);
+					}
+				}
+			}
+		}
+
 		var daSong:String = Paths.formatToSongPath(curSong);
+
 		if (isStoryMode && !seenCutscene)
 		{
 			switch (daSong)
@@ -1457,14 +1518,10 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'ugh' | 'guns' | 'stress':
 					tankIntro();
-				case 'lured' | 'cosplay' | 'ushanka':
+				case 'copied' | 'lured' | 'cosplay' | 'new-guest' |'ushanka':
 					startDialogue(dialogueJson);
-				case 'new-guest':
-					startVideo('mrwojciech1');
-				case 'copied':
-					startVideo('cut_2');
 				case 'double-trouble':
-					startVideo('cut_5');
+					startWojtekIntro();
 				default:
 					startCountdown();
 			}
@@ -1685,10 +1742,6 @@ class PlayState extends MusicBeatState
 		var daSong:String = Paths.formatToSongPath(curSong);
 		if(endingSong)
 			endSong();
-		else if(daSong == 'copied') 
-		    startDialogue(dialogueJson);
-		else if(daSong == "new-guest")
-			startDialogue(dialogueJson);
 		else
 			startCountdown();
 	}
@@ -2111,6 +2164,34 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+    function startWojtekIntro()
+	{
+		inCutscene = true;
+		camHUD.visible = false;
+
+		var redScreen:FlxSprite = new FlxSprite().makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.RED);
+		add(redScreen);
+
+		redScreen.screenCenter();
+		redScreen.scrollFactor.set();
+
+		FlxTween.tween(redScreen, {alpha: 0}, 0.7, {
+			ease: FlxEase.linear,
+			onComplete: function(twn:FlxTween) {
+				remove(redScreen);
+			}
+		});
+
+		FlxG.sound.play(Paths.sound('wojshot'), 0.7);
+
+		new FlxTimer().start(0.8, function(tmr:FlxTimer)
+		{
+			camHUD.visible = true;
+			remove(redScreen);
+			startCountdown();
+		});
+	}
+
 	var startTimer:FlxTimer;
 	var finishTimer:FlxTimer = null;
 
@@ -2118,6 +2199,7 @@ class PlayState extends MusicBeatState
 	public var countdownReady:FlxSprite;
 	public var countdownSet:FlxSprite;
 	public var countdownGo:FlxSprite;
+
 	public static var startOnTime:Float = 0;
 
 	public function startCountdown():Void
@@ -3354,6 +3436,7 @@ class PlayState extends MusicBeatState
 		setOnLuas('cameraX', camFollowPos.x);
 		setOnLuas('cameraY', camFollowPos.y);
 		setOnLuas('botPlay', cpuControlled);
+
 		callOnLuas('onUpdatePost', [elapsed]);
 		callFunc('onUpdatePost', [elapsed]);
 	}

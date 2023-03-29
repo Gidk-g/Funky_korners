@@ -281,18 +281,27 @@ class Stage extends FlxTypedGroup<FlxBasic>
 
 	function callStageScript()
 	{
-		var paths:Array<String> = [
-			Paths.getPreloadPath('stages/$curStage.hx'),
-			Paths.getPreloadPath('stages/$curStage.hxs'),
-			Paths.getPreloadPath('stages/$curStage.hsc'),
-			Paths.getPreloadPath('stages/$curStage.hscript')
-		];
-
-		for (path in paths)
+		#if MODS_ALLOWED
+		var hxToLoad:String = Paths.modFolders('stages/' + curStage + '.hx');
+		if(FileSystem.exists(hxToLoad))
 		{
-        	if (FileSystem.exists(path))
-            	stageScript = new ScriptHandler(path);
+			stageScript = new ScriptHandler(hxToLoad);
 		}
+		else
+		{
+			hxToLoad = Paths.getPreloadPath('stages/' + curStage + '.hx');
+			if(FileSystem.exists(hxToLoad))
+			{
+				stageScript = new ScriptHandler(hxToLoad);
+			}
+		}
+		#elseif sys
+		var hxToLoad:String = Paths.getPreloadPath('stages/' + curStage + '.hx');
+		if(OpenFlAssets.exists(hxToLoad))
+		{
+			stageScript = new ScriptHandler(hxToLoad);
+		}
+		#end
 
 		setVar('add', add);
 		setVar('kill', kill);

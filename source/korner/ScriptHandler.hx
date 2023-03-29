@@ -122,26 +122,4 @@ class ScriptHandler extends SScript
 			return true;
 		});
 	}
-
-	public static function callScripts(array:Array<ScriptHandler>)
-	{
-		var dirs:Array<Array<String>> = [
-			CoolUtil.absoluteDirectory('scripts'),
-			CoolUtil.absoluteDirectory('data/${CoolUtil.swapSpaceDash(PlayState.SONG.song.toLowerCase())}')
-		];
-
-		for (dir in dirs)
-		{
-			for (script in dir)
-			{
-				if (dir.length > 0)
-				{
-	    			if (script.length > 0 && script.endsWith('.hx') || script.endsWith('.hxs') || script.endsWith('.hsc') || script.endsWith('.hscript'))
-					{
-						array.push(new ScriptHandler(script));
-					}
-				}
-			}
-		}
-	}
 }
