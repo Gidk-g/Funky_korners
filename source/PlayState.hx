@@ -5339,12 +5339,6 @@ class PlayState extends MusicBeatState
 	{
 		setVar('this', this);
 
-		setVar('add', add);
-		setVar('kill', kill);
-		setVar('remove', remove);
-		setVar('destroy', destroy);
-		setVar('openSubState', openSubState);
-
 		setVar('gf', gf);
 		setVar('dad', dad);
 		setVar('boyfriend', boyfriend);
@@ -5362,7 +5356,7 @@ class PlayState extends MusicBeatState
 		setVar('curBeat', curBeat);
 		setVar('curStep', curStep);
 		setVar('curSection', curSection);
-
+		setVar('openSubState', openSubState);
 		setVar('songName', PlayState.SONG.song.toLowerCase());
 
 		setVar('setProperty', function(key:String, value:Dynamic)

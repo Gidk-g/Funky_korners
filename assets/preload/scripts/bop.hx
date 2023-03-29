@@ -20,41 +20,41 @@ function onCreatePost()
     korner.updateHitbox();
 
     if(PlayState.SONG.song.toLowerCase() == 'lured') {
-        add(bober);
-        add(roner);
+        PlayState.instance.add(bober);
+        PlayState.instance.add(roner);
     }
 
     if(PlayState.SONG.song.toLowerCase() == 'double-trouble') {
-        add(bober);
-        add(roner);
+        PlayState.instance.add(bober);
+        PlayState.instance.add(roner);
     }
 
     if(PlayState.SONG.song.toLowerCase() == 'copy-cat') {
-        add(bober);
-        add(roner);  
+        PlayState.instance.add(bober);
+        PlayState.instance.add(roner);  
     }
 
     if(PlayState.SONG.song.toLowerCase() == 'ushanka') {
-        add(korner);
+        PlayState.instance.add(korner);
     }
 
     if(PlayState.SONG.song.toLowerCase() == 'new-guest') {
-        add(korner);
+        PlayState.instance.add(korner);
     }
 
     if(PlayState.SONG.song.toLowerCase() == 'martian-madness') {
-        add(korner);
+        PlayState.instance.add(korner);
     }
 
     if(PlayState.SONG.song.toLowerCase() == 'copied-remix') {
-        add(bober);
-        add(roner);  
+        PlayState.instance.add(bober);
+        PlayState.instance.add(roner);  
     }
 
     if(PlayState.SONG.song.toLowerCase() == 'cookie-beat') {
-        add(bober);
-        add(roner);
-        add(korner);
+        PlayState.instance.add(bober);
+        PlayState.instance.add(roner);
+        PlayState.instance.add(korner);
     }
 }
 
