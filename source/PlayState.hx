@@ -838,11 +838,6 @@ class PlayState extends MusicBeatState
 
 		callFunc('onCreate', []);
 
-		setVar('add', this.add);
-		setVar('kill', this.kill);
-		setVar('remove', this.remove);
-		setVar('destroy', this.destroy);
-
 		stageBuild = new Stage(PlayState.curStage);
 		add(stageBuild);
 
