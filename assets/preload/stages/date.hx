@@ -26,7 +26,6 @@ function goofyAhh1()
     {
         canSomeoneWalk = false;
         goofy = new BGSprite('date/taiga', -800, -170, 0.9, 0.9, ['taiga']);
-        goofy.antialiasing = ClientPrefs.globalAntialiasing;
         FlxTween.tween(goofy, {x: 2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween) 
             {
                 goofy.kill();
@@ -39,7 +38,6 @@ function goofyAhh1()
     {
         canSomeoneWalk = false;
         goofy = new BGSprite('date/taiga', 1800, -170, 0.9, 0.9, ['taiga']);
-        goofy.antialiasing = ClientPrefs.globalAntialiasing;
         goofy.flipX = true;
         FlxTween.tween(goofy, {x: -2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween) 
             {
@@ -49,7 +47,9 @@ function goofyAhh1()
         });
         FlxTween.tween(goofy, {y: -170}, 3, {ease: FlxEase.expoInOut});
     }
-
+    goofy.antialiasing = ClientPrefs.globalAntialiasing;
+    goofy.animation.addByPrefix('taiga', 'taiga', 24, true);
+    goofy.animation.play('taiga', true);
     goofy.updateHitbox();
     goofy.dance(true);
     add(goofy);
@@ -61,7 +61,6 @@ function goofyAhh2()
     {
         canSomeoneWalk = false;
         goofy = new BGSprite('date/wipek', -1300, -180, 0.9, 0.9, ['wipek']);
-        goofy.antialiasing = ClientPrefs.globalAntialiasing;
         FlxTween.tween(goofy, {x: 2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween)  
             {
                 goofy.kill();
@@ -74,7 +73,6 @@ function goofyAhh2()
     {
         canSomeoneWalk = false;
         goofy = new BGSprite('date/wipek', 2300, -180, 0.9, 0.9, ['wipek']);
-        goofy.antialiasing = ClientPrefs.globalAntialiasing;
         goofy.flipX = true;
         FlxTween.tween(goofy, {x: -2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween)  
             {
@@ -84,7 +82,9 @@ function goofyAhh2()
         });
         FlxTween.tween(goofy, {y: -180}, 3, {ease: FlxEase.expoInOut});
     }
-
+    goofy.antialiasing = ClientPrefs.globalAntialiasing;
+    goofy.animation.addByPrefix('wipek', 'wipek', 24, true);
+    goofy.animation.play('wipek', true);
     goofy.updateHitbox();
     goofy.dance(true);
     add(goofy);
@@ -96,7 +96,6 @@ function goofyAhh3()
     {
         canSomeoneWalk = false;
         goofy = new BGSprite('date/alienxhoovie', -2000, -170, 0.9, 0.9, ['alien i hoovie']);
-        goofy.antialiasing = ClientPrefs.globalAntialiasing;
         FlxTween.tween(goofy, {x: 2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween)  
             {
                 goofy.kill();
@@ -109,7 +108,6 @@ function goofyAhh3()
     {
         canSomeoneWalk = false;
         goofy = new BGSprite('date/alienxhoovie', 3000, -170, 0.9, 0.9, ['alien i hoovie']);
-        goofy.antialiasing = ClientPrefs.globalAntialiasing;
         goofy.flipX = true;
         FlxTween.tween(goofy, {x: -2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween)  
             {
@@ -119,7 +117,9 @@ function goofyAhh3()
         });
         FlxTween.tween(goofy, {y: -170}, 3, {ease: FlxEase.expoInOut});
     }
-
+    goofy.antialiasing = ClientPrefs.globalAntialiasing;
+    goofy.animation.addByPrefix('alien i hoovie', 'alien i hoovie', 24, true);
+    goofy.animation.play('alien i hoovie', true);
     goofy.updateHitbox();
     goofy.dance(true);
     add(goofy);
