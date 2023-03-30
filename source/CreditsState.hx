@@ -91,6 +91,7 @@ class CreditsState extends MusicBeatState
 			['Fr4nk','frank','Additional Composer and Additional Artist','https://www.youtube.com/channel/UCc4NAsWMfjW_1jDrevYUe8A','404040'],
 			['Hooovie','hooovie','Additional Charter ','https://www.youtube.com/c/Hooovy','ADC2FF'],
 			['Bonky','bonky','Additional Composer','https://www.youtube.com/channel/UCGwMFusR_JC1sX-nM8FyB_A','FFD8B2'],
+			['Ziorber','ziorber','Additional Artist','https://www.youtube.com/channel/UCbX3W7twHztokBgl6Hl9IXw/videos','006DEB'],
 			['Merssaczek','mersak','New Dialogues Creator','https://www.youtube.com/channel/UCHDw3_BjcMbhm2WttF-7aGw','7EC1F2'],
 			['Codding Cat','kot','Additional Artist','https://www.youtube.com/channel/UCL2T_KQlSoEX5LZQvksG0_Q','00C6FF'],
 			[''],
