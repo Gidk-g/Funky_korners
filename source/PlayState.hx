@@ -1064,7 +1064,6 @@ class PlayState extends MusicBeatState
 			gf = new Character(0, 0, gfVersion);
 			startCharacterPos(gf);
 			gf.scrollFactor.set(0.95, 0.95);
-		    // add characters
 		    if (stageBuild.spawnGirlfriend)
 			gfGroup.add(gf);
 			startCharacterLua(gf.curCharacter);
@@ -2213,8 +2212,6 @@ class PlayState extends MusicBeatState
 		if(ret != FunkinLua.Function_Stop) {
 			if (skipCountdown || startOnTime > 0) skipArrowStartTween = true;
 
-			callFunc('onStartCountdown', []);
-
 			generateStaticArrows(0);
 			generateStaticArrows(1);
 
@@ -2231,11 +2228,13 @@ class PlayState extends MusicBeatState
 			startedCountdown = true;
 			Conductor.songPosition = 0;
 			Conductor.songPosition -= Conductor.crochet * 5;
+
+			callFunc('onCountdownStarted', []);
+
 			setOnLuas('startedCountdown', true);
 			callOnLuas('onCountdownStarted', []);
 
 			var swagCounter:Int = 0;
-
 
 			if(startOnTime < 0) startOnTime = 0;
 
@@ -2465,10 +2464,12 @@ class PlayState extends MusicBeatState
 
 	function startNextDialogue() {
 		dialogueCount++;
+		callFunc('onNextDialogue', [dialogueCount]);
 		callOnLuas('onNextDialogue', [dialogueCount]);
 	}
 
 	function skipDialogue() {
+		callFunc('onSkipDialogue', [dialogueCount]);
 		callOnLuas('onSkipDialogue', [dialogueCount]);
 	}
 
@@ -2784,6 +2785,9 @@ class PlayState extends MusicBeatState
 
 	function eventNoteEarlyTrigger(event:EventNote):Float {
 		var returnedValue:Float = callOnLuas('eventEarlyTrigger', [event.event]);
+
+		callFunc('eventEarlyTrigger', [event.event]);
+
 		if(returnedValue != 0) {
 			return returnedValue;
 		}
@@ -2997,8 +3001,8 @@ class PlayState extends MusicBeatState
 		{
 			iconP1.swapOldIcon();
 		}*/
-		callOnLuas('onUpdate', [elapsed]);
 
+		callOnLuas('onUpdate', [elapsed]);
 		callFunc('onUpdate', [elapsed]);
 
 		stageBuild.stageUpdateConstant(elapsed, boyfriend, gf, dad);
@@ -3280,7 +3284,9 @@ class PlayState extends MusicBeatState
 				var dunceNote:Note = unspawnNotes[0];
 				notes.insert(0, dunceNote);
 				dunceNote.spawned=true;
+
 				callOnLuas('onSpawnNote', [notes.members.indexOf(dunceNote), dunceNote.noteData, dunceNote.noteType, dunceNote.isSustainNote]);
+				callFunc('onSpawnNote', [notes.members.indexOf(dunceNote), dunceNote.noteData, dunceNote.noteType, dunceNote.isSustainNote]);
 
 				var index:Int = unspawnNotes.indexOf(dunceNote);
 				unspawnNotes.splice(index, 1);
@@ -3937,6 +3943,7 @@ class PlayState extends MusicBeatState
 			camFollow.y += gf.cameraPosition[1] + girlfriendCameraOffset[1];
 			tweenCamIn();
 			callOnLuas('onMoveCamera', ['gf']);
+			callFunc('onMoveCamera', ['gf']);
 			return;
 		}
 
@@ -3944,11 +3951,13 @@ class PlayState extends MusicBeatState
 		{
 			moveCamera(true);
 			callOnLuas('onMoveCamera', ['dad']);
+			callFunc('onMoveCamera', ['dad']);
 		}
 		else
 		{
 			moveCamera(false);
 			callOnLuas('onMoveCamera', ['boyfriend']);
+			callFunc('onMoveCamera', ['boyfriend']);
 		}
 	}
 
@@ -4500,6 +4509,7 @@ class PlayState extends MusicBeatState
 					}
 				}
 				else{
+					callFunc('onGhostTap', [key]);
 					callOnLuas('onGhostTap', [key]);
 					if (canMiss) {
 						noteMissPress(key);
@@ -4518,6 +4528,7 @@ class PlayState extends MusicBeatState
 				spr.playAnim('pressed');
 				spr.resetAnim = 0;
 			}
+			callFunc('onKeyPress', [key]);
 			callOnLuas('onKeyPress', [key]);
 		}
 		//trace('pressed: ' + controlArray);
@@ -4545,6 +4556,7 @@ class PlayState extends MusicBeatState
 				spr.playAnim('static');
 				spr.resetAnim = 0;
 			}
+			callFunc('onKeyRelease', [key]);
 			callOnLuas('onKeyRelease', [key]);
 		}
 		//trace('released: ' + controlArray);
@@ -5224,7 +5236,6 @@ class PlayState extends MusicBeatState
 		}
 		lastBeatHit = curBeat;
 
-		// stage stuffs
 		stageBuild.stageUpdate(curBeat, boyfriend, gf, dad);
 
 		callFunc('onBeatHit', [curBeat]);
@@ -5266,7 +5277,9 @@ class PlayState extends MusicBeatState
 			setOnLuas('altAnim', SONG.notes[curSection].altAnim);
 			setOnLuas('gfSection', SONG.notes[curSection].gfSection);
 		}
-		
+
+		callFunc('onSectionHit', []);
+
 		setOnLuas('curSection', curSection);
 		callOnLuas('onSectionHit', []);
 	}
@@ -5444,11 +5457,13 @@ class PlayState extends MusicBeatState
 		setOnLuas('score', songScore);
 		setOnLuas('misses', songMisses);
 		setOnLuas('hits', songHits);
-		
+
 		if (badHit)
 			updateScore(true); // miss notes shouldn't make the scoretxt bounce -Ghost
 		else
 			updateScore(false);
+
+		callFunc('onRecalculateRating', [badHit]);
 
 		var ret:Dynamic = callOnLuas('onRecalculateRating', [], false);
 		if(ret != FunkinLua.Function_Stop)
