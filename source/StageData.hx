@@ -146,8 +146,6 @@ class Stage extends FlxTypedGroup<FlxBasic>
 {
 	public static var instance:Stage;
 
-	public var gfVersion:String = 'gf';
-
 	public var curStage:String;
 
 	public var foreground:FlxTypedGroup<FlxBasic>;
@@ -192,7 +190,7 @@ class Stage extends FlxTypedGroup<FlxBasic>
 	public function reloadJson()
 	{
 		var stageJson:StageFile = StageData.getStageFile(PlayState.curStage);
-	
+
 		if (stageJson != null)
 		{
 			if (stageJson.objects != null)
@@ -248,17 +246,6 @@ class Stage extends FlxTypedGroup<FlxBasic>
 		}
 	}
 
-	// get the dad's position
-	public function dadPosition(curStage:String, boyfriend:Character, gf:Character, dad:Character):Void
-	{
-		var characterArray:Array<Character> = [dad, boyfriend];
-	}
-
-	public function repositionPlayers(curStage:String, boyfriend:Boyfriend, gf:Character, dad:Character)
-	{
-		callFunc('onRepositionPlayers', [boyfriend, gf, dad]);
-	}
-
 	public function createPost(curStage:String, boyfriend:Boyfriend, gf:Character, dad:Character)
 	{
 		callFunc('onCreatePost', [boyfriend, gf, dad]);
@@ -304,12 +291,9 @@ class Stage extends FlxTypedGroup<FlxBasic>
 		#end
 
 		setVar('add', add);
-		setVar('kill', kill);
 		setVar('remove', remove);
-		setVar('destroy', destroy);
 		setVar('foreground', foreground);
 		setVar('layers', layers);
-		setVar('gfVersion', gfVersion);
 
 		setVar('spawnGirlfriend', function(blah:Bool)
 		{

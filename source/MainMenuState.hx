@@ -1,7 +1,5 @@
 package;
 
-import sys.FileSystem;
-import korner.ScriptHandler;
 import editors.WeekEditorState.WeekEditorFreeplayState;
 import flixel.addons.ui.FlxUISprite;
 import flixel.addons.ui.FlxUIButton;
@@ -59,8 +57,6 @@ class MainMenuState extends MusicBeatState
 	var debugKeys:Array<FlxKey>;
 
 	public var mouseQuant:Bool = false;
-
-	public var menuScript:ScriptHandler;
 
 	override function create()
 	{

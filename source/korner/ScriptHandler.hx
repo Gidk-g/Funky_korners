@@ -1,6 +1,7 @@
 package korner;
 
 import flixel.*;
+import flixel.addons.display.FlxRuntimeShader;
 import flixel.addons.display.FlxBackdrop;
 import flixel.addons.effects.FlxTrail;
 import flixel.graphics.FlxGraphic;
@@ -37,6 +38,8 @@ class ScriptHandler extends SScript
 	{
 		super.preset();
 
+		set("script", this);
+
 		set('Type', Type);
 		set('Math', Math);
 		set('Std', Std);
@@ -49,7 +52,7 @@ class ScriptHandler extends SScript
 		set('FlxSprite', FlxSprite);
 		set('FlxText', FlxText);
 		set('FlxTextBorderStyle', FlxTextBorderStyle);
-		set('FlxRuntimeShader', flixel.addons.display.FlxRuntimeShader);
+		set('FlxRuntimeShader', FlxRuntimeShader);
 		set('FlxSound', FlxSound);
 		set('FlxTimer', FlxTimer);
 		set('FlxTween', FlxTween);
@@ -98,6 +101,9 @@ class ScriptHandler extends SScript
 		set('Stage', StageData.Stage);
 
 		set('game', PlayState.instance);
+		set('notes', PlayState.instance.notes);
+		set('eventNotes', PlayState.instance.eventNotes);
+		set('unspawnNotes', PlayState.instance.unspawnNotes);
 
 		#if windows
 		set('platform', 'windows');
@@ -120,6 +126,44 @@ class ScriptHandler extends SScript
 			var value2:String = arg2;
 			PlayState.instance.triggerEventNote(name, value1, value2);
 			return true;
+		});
+
+		set("newShader", function(fragFile:String = null, vertFile:String = null) {
+			var runtime:FlxRuntimeShader = null;
+			try {
+				runtime = new FlxRuntimeShader(
+					fragFile == null ? null : Paths.shaderFragment(fragFile), 
+					vertFile == null ? null : Paths.shaderVertex(vertFile)
+				);
+			} catch(e:Dynamic) {
+				trace("Shader compilation error:" + e.message);
+			}
+			return runtime == null ? new FlxRuntimeShader() : runtime;
+		});
+
+		set("FlxColor", {
+			toRGBArray: function(color:FlxColor) {
+				return [color.red, color.green, color.blue];
+			},
+			lerp: function(from:FlxColor, to:FlxColor, ratio:Float) {
+				return FlxColor.fromRGBFloat(
+					FlxMath.lerp(from.redFloat, to.redFloat, ratio),
+					FlxMath.lerp(from.greenFloat, to.greenFloat, ratio),
+					FlxMath.lerp(from.blueFloat, to.blueFloat, ratio),
+					FlxMath.lerp(from.alphaFloat, to.alphaFloat, ratio)
+				);
+			},
+			setHue: function(color:FlxColor, hue) {
+				color.hue = hue;
+				return color;
+			},
+			fromCMYK: FlxColor.fromCMYK,
+			fromHSL: FlxColor.fromHSL,
+			fromHSB: FlxColor.fromHSB,
+			fromInt: FlxColor.fromInt,
+			fromRGBFloat: FlxColor.fromRGBFloat,
+			fromString: FlxColor.fromString,
+			fromRGB: FlxColor.fromRGB
 		});
 	}
 }

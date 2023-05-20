@@ -72,10 +72,6 @@ class TitleState extends MusicBeatState
 
 	var curWacky:Array<String> = [];
 
-	public static var curDir = "assets";
-
-	public static var directories = [];
-
 	var wackyImage:FlxSprite;
 
 	#if TITLE_SCREEN_EASTER_EGG
@@ -98,15 +94,6 @@ class TitleState extends MusicBeatState
 		Paths.clearUnusedMemory();
 
 		FlxG.camera.zoom = defaultCamZoom;
-
-	    directories = [];
-	
-	    //for (i in FileSystem.readDirectory("dlc")){
-		//    if (!i.contains(".") && i != "kfcMod"){
-		//	    directories.push(i);
-		//	    trace(i);
-		//    }
-	    //}
 
 		#if LUA_ALLOWED
 		Paths.pushGlobalMods();

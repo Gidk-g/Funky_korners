@@ -841,9 +841,6 @@ class PlayState extends MusicBeatState
 		stageBuild = new Stage(PlayState.curStage);
 		add(stageBuild);
 
-		stageBuild.repositionPlayers(curStage, boyfriend, gf, dad);
-		stageBuild.dadPosition(curStage, boyfriend, gf, dad);
-
 		add(stageBuild.layers);
 
 		switch(Paths.formatToSongPath(SONG.song))
@@ -1275,6 +1272,30 @@ class PlayState extends MusicBeatState
 			}
 			#elseif sys
 			var hxToLoad:String = Paths.getPreloadPath('custom_events/' + event + '.hx');
+			if(OpenFlAssets.exists(hxToLoad))
+			{
+				scriptArray.push(new ScriptHandler(hxToLoad));
+			}
+			#end
+		}
+		for (notetype in noteTypeMap.keys())
+		{
+			#if MODS_ALLOWED
+			var hxToLoad:String = Paths.modFolders('custom_notetypes/' + notetype + '.hx');
+			if(FileSystem.exists(hxToLoad))
+			{
+				scriptArray.push(new ScriptHandler(hxToLoad));
+			}
+			else
+			{
+				hxToLoad = Paths.getPreloadPath('custom_notetypes/' + notetype + '.hx');
+				if(FileSystem.exists(hxToLoad))
+				{
+					scriptArray.push(new ScriptHandler(hxToLoad));
+				}
+			}
+			#elseif sys
+			var hxToLoad:String = Paths.getPreloadPath('custom_notetypes/' + notetype + '.hx');
 			if(OpenFlAssets.exists(hxToLoad))
 			{
 				scriptArray.push(new ScriptHandler(hxToLoad));
@@ -2179,7 +2200,7 @@ class PlayState extends MusicBeatState
 
 		FlxG.sound.play(Paths.sound('wojshot'), 0.7);
 
-		new FlxTimer().start(0.8, function(tmr:FlxTimer)
+		new FlxTimer().start(0.7, function(tmr:FlxTimer)
 		{
 			camHUD.visible = true;
 			remove(redScreen);
@@ -5374,7 +5395,18 @@ class PlayState extends MusicBeatState
 		setVar('curStep', curStep);
 		setVar('curSection', curSection);
 		setVar('openSubState', openSubState);
+
 		setVar('songName', PlayState.SONG.song.toLowerCase());
+
+		setVar('add', function(FlxBasic:FlxBasic)
+		{
+			return PlayState.instance.add(FlxBasic);
+		});
+
+		setVar('remove', function(FlxBasic:FlxBasic)
+		{
+			return PlayState.instance.remove(FlxBasic);
+		});
 
 		setVar('setProperty', function(key:String, value:Dynamic)
 		{

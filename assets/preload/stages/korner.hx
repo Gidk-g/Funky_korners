@@ -39,6 +39,12 @@ function onCreate()
     pow.antialiasing = ClientPrefs.globalAntialiasing;
     pow.updateHitbox();
 
+    gfkor = new FlxSprite(-300, -70);
+    gfkor.frames = Paths.getSparrowAtlas('characters/GF', 'shared');
+    gfkor.animation.addByIndices('danceLeft', 'GF Dancing Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+    gfkor.animation.addByIndices('danceRight', 'GF Dancing Beat', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+    gfkor.antialiasing = ClientPrefs.globalAntialiasing;
+
     if(PlayState.SONG.song.toLowerCase() == 'copied') {
         add(pow);
     }
@@ -71,11 +77,10 @@ function onCreate()
         add(pow);
     }
 
-    gfkor = new FlxSprite(-300, -70);
-    gfkor.frames = Paths.getSparrowAtlas('characters/GF', 'shared');
-    gfkor.animation.addByIndices('danceLeft', 'GF Dancing Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-    gfkor.animation.addByIndices('danceRight', 'GF Dancing Beat', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
-    gfkor.antialiasing = ClientPrefs.globalAntialiasing;
+    if(PlayState.SONG.song.toLowerCase() == 'copy-cat') {
+        add(pow);
+    }
+
     if(PlayState.SONG.song.toLowerCase() == 'double-trouble') {
         add(gfkor);
         add(pow);
@@ -89,11 +94,14 @@ function onCreate()
 function onBeatHit(curBeat:Int)
 {
     if(curBeat % 2 == 0) {
-        danceLeft = !danceLeft;
+        pow.dance(true);
+    }
+
+	if (curBeat % 1 == 0) {
+		danceLeft = Math.abs(curBeat) % 2 == 1;
         if (danceLeft)
             gfkor.animation.play('danceRight');
         else
             gfkor.animation.play('danceLeft');
-        pow.dance(true);
     }
 }

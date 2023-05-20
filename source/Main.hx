@@ -99,9 +99,11 @@ class Main extends Sprite
 		FlxG.autoPause = false;
 		FlxG.mouse.visible = false;
 		#end
-		
+
 		#if cpp
 		CPPInterface.darkMode();
+		lime.app.Application.current.window.borderless = true;
+		lime.app.Application.current.window.borderless = false;
 		#end
 
 		#if cpp

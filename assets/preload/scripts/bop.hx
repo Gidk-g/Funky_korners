@@ -66,8 +66,3 @@ function onBeatHit(curBeat:Int)
         korner.dance(true);
     }
 }
-
-function add(value:Dynamic)
-{
-    PlayState.instance.add(value);
-}
