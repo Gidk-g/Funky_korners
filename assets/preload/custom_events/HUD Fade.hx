@@ -5,8 +5,7 @@ function onEvent(eventName, value1, value2) {
 	    if(Math.isNaN(charType))
 		    charType = 0;
 
-	    switch(charType)
-	    {
+	    switch(charType) {
 		    case 0:
 			    FlxTween.tween(this.camHUD, {alpha: 1}, 0.7, {ease: FlxEase.quadInOut});
 		    case 1:

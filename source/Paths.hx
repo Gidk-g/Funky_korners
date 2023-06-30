@@ -24,16 +24,6 @@ import haxe.Json;
 
 import flash.media.Sound;
 
-#if cpp
-import cpp.vm.Gc;
-#elseif hl
-import hl.Gc;
-#elseif java
-import java.vm.Gc;
-#elseif neko
-import neko.vm.Gc;
-#end
-
 using StringTools;
 
 class Paths
@@ -56,22 +46,9 @@ class Paths
 		'stages',
 		'weeks',
 		'fonts',
-		'scripts',
-		'achievements'
+		'scripts'
 	];
 	#end
-
-	public static function compress() {
-		#if cpp
-		Gc.compact();
-		Gc.run(true);
-		//Gc.setMinimumWorkingMemory(totalMemory);
-		#elseif hl
-		Gc.major();
-		#elseif (java || neko)
-		Gc.run(true);
-		#end
-	}
 
 	public static function excludeAsset(key:String) {
 		if (!dumpExclusions.contains(key))
