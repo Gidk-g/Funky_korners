@@ -85,9 +85,6 @@ class ScriptHandler extends SScript
 		set('FlxBarFillDirection', FlxBarFillDirection);
 		set('FlxAxes', FlxAxes);
 
-		set('GraphicsShader', GraphicsShader);
-		set('ShaderFilter', ShaderFilter);
-
 		set('BGSprite', BGSprite);
 		set('FNFSprite', FNFSprite);
 		set('ClientPrefs', ClientPrefs);
@@ -107,6 +104,8 @@ class ScriptHandler extends SScript
 		set('HealthIcon', HealthIcon);
 		set('StageData', StageData);
 		set('Stage', StageData.Stage);
+		set('GraphicsShader', GraphicsShader);
+		set('ShaderFilter', ShaderFilter);
 
 		set('game', PlayState.instance);
 		set('notes', PlayState.instance.notes);
@@ -160,10 +159,8 @@ class ScriptClasses
     public static function get_FlxColor() {
         return {
 			// extra functions
-			toRGBArray: function(color:FlxColor) {
-				return [color.red, color.green, color.blue];
-			},
-			lerp: function(from:FlxColor, to:FlxColor, ratio:Float) {
+			"toRGBArray": function(color:FlxColor) {return [color.red, color.green, color.blue];},
+			"lerp": function(from:FlxColor, to:FlxColor, ratio:Float) {
 				return FlxColor.fromRGBFloat(
 					FlxMath.lerp(from.redFloat, to.redFloat, ratio),
 					FlxMath.lerp(from.greenFloat, to.greenFloat, ratio),
@@ -171,8 +168,16 @@ class ScriptClasses
 					FlxMath.lerp(from.alphaFloat, to.alphaFloat, ratio)
 				);
 			},
-			setHue: function(color:FlxColor, hue) {
+			"setHue": function(color:FlxColor, hue:Float) {
 				color.hue = hue;
+				return color;
+			},
+			"setSaturation": function(color:FlxColor, saturation:Float) {
+				color.saturation = saturation;
+				return color;
+			},
+			"setBrightness": function(color:FlxColor, brightness:Float) {
+				color.brightness = brightness;
 				return color;
 			},
 
