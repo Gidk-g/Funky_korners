@@ -5408,21 +5408,27 @@ class PlayState extends MusicBeatState
 			return PlayState.instance.remove(FlxBasic);
 		});
 
+		setVar('set', function(key:String, value:Dynamic)
+		{
+			Reflect.setProperty(this, key, value);
+		});
+
+		setVar('get', function(variable:String)
+		{
+			return Reflect.getProperty(this, variable);
+		});
+
 		setVar('setProperty', function(key:String, value:Dynamic)
 		{
 			var dotList:Array<String> = key.split('.');
-
 			if (dotList.length > 1)
 			{
 				var reflector:Dynamic = Reflect.getProperty(this, dotList[0]);
-
 				for (i in 1...dotList.length - 1)
 					reflector = Reflect.getProperty(reflector, dotList[i]);
-
 				Reflect.setProperty(reflector, dotList[dotList.length - 1], value);
 				return true;
 			}
-
 			Reflect.setProperty(this, key, value);
 			return true;
 		});
@@ -5430,53 +5436,40 @@ class PlayState extends MusicBeatState
 		setVar('getProperty', function(variable:String)
 		{
 			var dotList:Array<String> = variable.split('.');
-
 			if (dotList.length > 1)
 			{
 				var reflector:Dynamic = Reflect.getProperty(this, dotList[0]);
-
 				for (i in 1...dotList.length - 1)
 					reflector = Reflect.getProperty(reflector, dotList[i]);
-
 				return Reflect.getProperty(reflector, dotList[dotList.length - 1]);
 			}
-
 			return Reflect.getProperty(this, variable);
 		});
 
 		setVar('hasField', function(variable:String)
 		{
 			var dotList:Array<String> = variable.split('.');
-
 			if (dotList.length > 1)
 			{
 				var reflector:Dynamic = Reflect.getProperty(this, dotList[0]);
-
 				for (i in 1...dotList.length - 1)
 					reflector = Reflect.getProperty(reflector, dotList[i]);
-
 				return Reflect.hasField(reflector, dotList[dotList.length - 1]);
 			}
-
 			return Reflect.hasField(this, variable);
 		});
 
 		setVar('copy', function(variable:String)
 		{
 			var dotList:Array<String> = variable.split('.');
-
 			var reflector:Dynamic = null;
-
 			if (dotList.length > 1)
 			{
 				reflector = Reflect.getProperty(this, dotList[0]);
-
 				for (i in 1...dotList.length - 1)
 					reflector = Reflect.getProperty(reflector, dotList[i]);
-
 				return Reflect.getProperty(reflector, dotList[dotList.length - 1]);
 			}
-
 			return Reflect.copy(reflector);
 		});
 	}
