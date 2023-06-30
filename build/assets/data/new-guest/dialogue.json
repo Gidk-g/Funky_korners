@@ -1,0 +1,100 @@
+{
+	"dialogue": [
+		{
+			"expression": "excited",
+			"text": "Holy crap Korner, is that Boy™Friend from Friday Night Funkin'?!?!!",
+			"boxState": "angry",
+			"portrait": "wojtek",
+			"speed": 0.045,
+			"sound": "wojtek"
+		},
+		{
+			"expression": "talk",
+			"text": "beep ",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05,
+			"sound": "bf"
+		},
+		{
+			"expression": "imean",
+			"text": "Yeah, that's him.",
+			"boxState": "normal",
+			"portrait": "KornerDIalogue",
+			"speed": 0.05,
+			"sound": "kornersound"
+		},
+		{
+			"expression": "imean",
+			"text": "Why so frustrated?",
+			"boxState": "normal",
+			"portrait": "wojtek",
+			"speed": 0.05,
+			"sound": "wojtek"
+		},
+		{
+			"expression": "imean",
+			"text": "He beat me.",
+			"boxState": "normal",
+			"portrait": "KornerDialogue",
+			"speed": 0.05,
+			"sound": "kornersound"
+		},
+		{
+			"expression": "talk",
+			"text": "But it's fine.",
+			"boxState": "normal",
+			"portrait": "kornerdialogue",
+			"speed": 0.05,
+			"sound": "kornersound"
+		},
+		{
+			"expression": "talk",
+			"text": "be po be pi rap po be ske bo di po de bu ba pi bu pi pa pu",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.03,
+			"sound": "bf"
+		},
+		{
+			"expression": "naprawde",
+			"text": "Rap with me?",
+			"boxState": "normal",
+			"portrait": "wojtek",
+			"speed": 0.075,
+			"sound": "wojtek"
+		},
+		{
+			"expression": "talk",
+			"text": "ye",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05,
+			"sound": "bf"
+		},
+		{
+			"expression": "imean",
+			"text": "Well, i can try, i guess.",
+			"boxState": "normal",
+			"portrait": "wojtek",
+			"speed": 0.05,
+			"sound": "wojtek"
+		},
+		{
+			"expression": "talk",
+			"text": "be pu ba pi ba",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05,
+			"sound": "bf"
+		},
+		{
+			"expression": "naprawde",
+			"text": "NO, DON'T START NOW YOU LITTLE-",
+			"boxState": "normal",
+			"portrait": "wojtek",
+			"speed": 0.05,
+			"sound": "wojtek"
+		}
+	]
+}

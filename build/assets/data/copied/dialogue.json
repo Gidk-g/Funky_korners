@@ -1,0 +1,156 @@
+{
+	"dialogue": [
+		{
+			"expression": "talk",
+			"text": "beep",
+			"boxState": "normal",
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "excited",
+			"text": "Wow, a Boyfriend cosplayer, in Poland!",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.03,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "imean",
+			"text": "That's new.",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.04,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "confused",
+			"text": "beep, bep bop?",
+			"boxState": "normal",
+			"sound": "bf",
+			"speed": 0.075,
+			"portrait": "bf"
+		},
+		{
+			"expression": "excited",
+			"text": "Wowie, you even sound like him!",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.03,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "confused",
+			"text": "... ",
+			"boxState": "normal",
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "excited",
+			"text": "Yooo, even a Girlfriend cosplayer!",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "pissed",
+			"text": "......",
+			"boxState": "normal",
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "imean",
+			"text": "And you even got the same speakers!",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.03,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "pissed",
+			"text": "are you fuckin' stupid?",
+			"boxState": "normal",
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "naprawde",
+			"text": "...",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.5,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "talk",
+			"text": "I'm fuckin' challenging you to a rap battle, you weird white cummy copycat.",
+			"boxState": "normal",
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "naprawde",
+			"text": "...",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.5,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "excited",
+			"text": "You can even talk like him!",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "talk",
+			"text": "fuck you",
+			"boxState": "normal",
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "excited",
+			"text": "Uhh, Ok-\\nI will only belive you after you beat me in a rap battle!",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "imean",
+			"text": "Sounds good?",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue"
+		},
+		{
+			"expression": "excited",
+			"text": "beep",
+			"boxState": "normal",
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf"
+		},
+		{
+			"expression": "talk",
+			"text": "Ok, Let's go!",
+			"boxState": "normal",
+			"sound": "kornersound",
+			"speed": 0.05,
+			"portrait": "kornerdialogue"
+		}
+	]
+}

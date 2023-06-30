@@ -1,0 +1,44 @@
+{
+	"dialogue": [
+		{
+			"expression": "talk",
+			"text": "Nice one!",
+			"boxState": "normal",
+			"portrait": "kornerdialogue",
+			"speed": 0.05,
+			"sound": "kornersound"
+		},
+		{
+			"expression": "talk",
+			"text": "How about another one?",
+			"boxState": "normal",
+			"portrait": "kornerdialogue",
+			"speed": 0.05,
+			"sound": "kornersound"
+		},
+		{
+			"expression": "talk",
+			"text": "beep bo",
+			"boxState": "normal",
+			"portrait": "bf",
+			"speed": 0.05,
+			"sound": "bf"
+		},
+		{
+			"expression": "talk",
+			"text": "Ready?",
+			"boxState": "normal",
+			"portrait": "kornerdialogue",
+			"speed": 0.05,
+			"sound": "kornersound"
+		},
+		{
+			"expression": "excited",
+			"text": "bep",
+			"boxState": "normal",
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf"
+		}
+	]
+}

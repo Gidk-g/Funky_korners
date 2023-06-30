@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "i"
+		},
+		{
+			"offsets": [
+				0,
+				-20
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "d"
+		},
+		{
+			"offsets": [
+				90,
+				48
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "u"
+		},
+		{
+			"offsets": [
+				-2,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "r"
+		},
+		{
+			"offsets": [
+				34,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "l"
+		},
+		{
+			"offsets": [
+				82,
+				-17
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "kick",
+			"indices": [],
+			"name": "kickit"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/wojtek",
+	"position": [
+		50,
+		-50
+	],
+	"healthicon": "wojtek",
+	"flip_x": false,
+	"healthbar_colors": [
+		153,
+		51,
+		204
+	],
+	"camera_position": [
+		0,
+		-50
+	],
+	"sing_duration": 6,
+	"scale": 1
+}

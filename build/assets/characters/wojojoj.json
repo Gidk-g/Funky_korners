@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "i",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-20
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "d",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				90,
+				48
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "u",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "r",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				149,
+				-9
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "l",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-2
+			],
+			"anim": "bum",
+			"fps": 24,
+			"name": "bum",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/wojtus_stop",
+	"position": [
+		50,
+		-50
+	],
+	"healthicon": "woj",
+	"flip_x": false,
+	"healthbar_colors": [
+		153,
+		51,
+		204
+	],
+	"camera_position": [
+		-250,
+		-50
+	],
+	"sing_duration": 6,
+	"scale": 1
+}

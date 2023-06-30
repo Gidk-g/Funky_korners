@@ -1,0 +1,68 @@
+{
+	"dialogue": [
+		{
+			"sound": "wojtek",
+			"speed": 0.05,
+			"portrait": "wojtek",
+			"boxState": "normal",
+			"expression": "naprawde",
+			"text": "Shit, you've beaten me."
+		},
+		{
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "beep bo ba beep pe bep peepp"
+		},
+		{
+			"sound": "wojtek",
+			"speed": 0.05,
+			"portrait": "wojtek",
+			"boxState": "normal",
+			"expression": "imean",
+			"text": "You're better than i expected."
+		},
+		{
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "boo be bep boob"
+		},
+		{
+			"sound": "wojtek",
+			"speed": 0.05,
+			"portrait": "wojtek",
+			"boxState": "normal",
+			"expression": "naprawde",
+			"text": "You want another one?"
+		},
+		{
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "be po be yesssssssir"
+		},
+		{
+			"sound": "wojtek",
+			"speed": 0.05,
+			"portrait": "wojtek",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "But this time, i'm gonna give you a REAL challenge."
+		},
+		{
+			"sound": "bf",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "be po be pi pi bo boop!?"
+		}
+	]
+}

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="povik.png">
+	<!-- Created with Adobe Animate version 22.0.5.191 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Symbol 1 — wystąpienie 10000" x="0" y="0" width="174" height="324" frameX="-10" frameY="-6" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10001" x="0" y="0" width="174" height="324" frameX="-10" frameY="-6" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10002" x="0" y="0" width="174" height="324" frameX="-10" frameY="-6" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10003" x="174" y="0" width="182" height="319" frameX="-6" frameY="-11" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10004" x="174" y="0" width="182" height="319" frameX="-6" frameY="-11" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10005" x="174" y="0" width="182" height="319" frameX="-6" frameY="-11" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10006" x="356" y="0" width="194" height="306" frameX="0" frameY="-24" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10007" x="356" y="0" width="194" height="306" frameX="0" frameY="-24" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10008" x="356" y="0" width="194" height="306" frameX="0" frameY="-24" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10009" x="550" y="0" width="162" height="330" frameX="-16" frameY="0" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10010" x="550" y="0" width="162" height="330" frameX="-16" frameY="0" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10011" x="550" y="0" width="162" height="330" frameX="-16" frameY="0" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10012" x="712" y="0" width="174" height="327" frameX="-10" frameY="-3" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10013" x="712" y="0" width="174" height="327" frameX="-10" frameY="-3" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10014" x="712" y="0" width="174" height="327" frameX="-10" frameY="-3" frameWidth="194" frameHeight="330"/>
+	<SubTexture name="Symbol 1 — wystąpienie 10015" x="712" y="0" width="174" height="327" frameX="-10" frameY="-3" frameWidth="194" frameHeight="330"/>
+</TextureAtlas>

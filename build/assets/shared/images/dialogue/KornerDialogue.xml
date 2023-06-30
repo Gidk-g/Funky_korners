@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="KornerDialogue.png"><SubTexture name="KornerDialogue rlly0000" x="0" y="0" width="797" height="929" frameX="-184" frameY="-151" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="KornerDialogue imean0000" x="797" y="0" width="797" height="929" frameX="-184" frameY="-151" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="KornerDialogue kindahappy0000" x="1594" y="0" width="797" height="929" frameX="-184" frameY="-151" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="KornerDialogue please0000" x="0" y="929" width="797" height="929" frameX="-184" frameY="-151" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="KornerDialogue dunno0000" x="797" y="929" width="797" height="929" frameX="-184" frameY="-151" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="KornerDialogue idle0000" x="1594" y="929" width="797" height="929" frameX="-184" frameY="-151" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="KornerDialogue idle0001" x="2391" y="0" width="797" height="929" frameX="-184" frameY="-151" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="KornerDialogue glitter0000" x="2391" y="929" width="797" height="929" frameX="-184" frameY="-151" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="KornerDialogue talking0000" x="0" y="1858" width="797" height="929" frameX="-184" frameY="-151" frameWidth="1920" frameHeight="1080" />
+</TextureAtlas>

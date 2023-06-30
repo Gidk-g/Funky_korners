@@ -1,0 +1,11 @@
+{
+	"idle_anim": "idle",
+	"image": "wojtek",
+	"position": [
+		45,
+		300
+	],
+	"flipX": false,
+	"scale": 0.45,
+	"confirm_anim": "M Dad Idle"
+}

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="WojtekDialogue.png">
+<SubTexture name="KornerDialogue imean0000" x="532" y="964" width="532" height="888" frameX="0" frameY="0" frameWidth="532" frameHeight="888" />
+<SubTexture name="KornerDialogue kindahappy0000" x="0" y="0" width="552" height="964" frameX="0" frameY="0" frameWidth="552" frameHeight="964" />
+<SubTexture name="KornerDialogue please0000" x="1742" y="0" width="572" height="917" frameX="0" frameY="0" frameWidth="572" frameHeight="917" />
+<SubTexture name="KornerDialogue idle0000" x="552" y="0" width="592" height="926" frameX="0" frameY="0" frameWidth="592" frameHeight="926" />
+<SubTexture name="KornerDialogue glitter0000" x="1064" y="964" width="532" height="888" frameX="0" frameY="0" frameWidth="532" frameHeight="888" />
+<SubTexture name="KornerDialogue dunno0000" x="1144" y="0" width="598" height="923" frameX="0" frameY="0" frameWidth="598" frameHeight="923" />
+<SubTexture name="KornerDialogue idle0001" x="0" y="964" width="532" height="906" frameX="0" frameY="0" frameWidth="532" frameHeight="906" />
+<SubTexture name="KornerDialogue moreglitter0000" x="1596" y="964" width="532" height="888" frameX="0" frameY="0" frameWidth="532" frameHeight="888" />
+<SubTexture name="KornerDialogue talking0000" x="2314" y="0" width="532" height="859" frameX="0" frameY="0" frameWidth="532" frameHeight="859" />
+</TextureAtlas>

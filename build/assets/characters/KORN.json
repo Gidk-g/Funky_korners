@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-310,
+				20
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "korner-idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-310,
+				2
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "korner-down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-306,
+				17
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "korner-left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-310,
+				17
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "korner-right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-310,
+				55
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "korner-up",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/korn",
+	"position": [
+		-160,
+		50
+	],
+	"healthicon": "korner",
+	"flip_x": true,
+	"healthbar_colors": [
+		233,
+		198,
+		235
+	],
+	"camera_position": [
+		-570,
+		-10
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

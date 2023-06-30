@@ -1,0 +1,89 @@
+{
+	"dialogue_pos": "left",
+	"position": [
+		20,
+		-210
+	],
+	"scale": 0.599999999999999,
+	"animations": [
+		{
+			"anim": "talk",
+			"loop_offsets": [
+				0,
+				-4
+			],
+			"idle_offsets": [
+				0,
+				3
+			],
+			"loop_name": "KornerDialogue talking",
+			"idle_name": "KornerDialogue idle0001"
+		},
+		{
+			"loop_offsets": [
+				0,
+				-5
+			],
+			"anim": "excited",
+			"idle_offsets": [
+				0,
+				-5
+			],
+			"loop_name": "KornerDialogue glitter",
+			"idle_name": "KornerDialogue glitter0000"
+		},
+		{
+			"idle_offsets": [
+				0,
+				-4
+			],
+			"anim": "imean",
+			"loop_offsets": [
+				0,
+				-4
+			],
+			"idle_name": "KornerDialogue imean",
+			"loop_name": "KornerDialogue imean"
+		},
+		{
+			"idle_offsets": [
+				7,
+				3
+			],
+			"anim": "naprawde",
+			"loop_offsets": [
+				7,
+				3
+			],
+			"idle_name": "KornerDialogue dunno",
+			"loop_name": "KornerDialogue dunno"
+		},
+		{
+			"idle_offsets": [
+				0,
+				7
+			],
+			"anim": "szok",
+			"loop_offsets": [
+				0,
+				7
+			],
+			"idle_name": "KornerDialogue please",
+			"loop_name": "KornerDialogue please"
+		},
+		{
+			"loop_name": "KornerDialogue kindahappy0",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "KornerDialogue kindahappy0",
+			"anim": "wkurw",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	],
+	"image": "WojtekDialogue"
+}

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Kaczak.png"><SubTexture name="Kaczak down0000" x="2271" y="1277" width="314" height="618" frameX="-147" frameY="-73" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak down0001" x="1947" y="1307" width="311" height="617" frameX="-150" frameY="-74" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak down0002" x="1077" y="1950" width="307" height="616" frameX="-154" frameY="-75" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak down0003" x="1384" y="1950" width="307" height="614" frameX="-155" frameY="-77" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak down0004" x="1691" y="1950" width="307" height="613" frameX="-155" frameY="-78" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak idle0000" x="0" y="1950" width="357" height="634" frameX="-130" frameY="-57" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak idle0001" x="717" y="1950" width="360" height="631" frameX="-135" frameY="-60" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak idle0002" x="357" y="1950" width="360" height="631" frameX="-137" frameY="-60" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak idle0003" x="357" y="1950" width="360" height="631" frameX="-137" frameY="-60" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak idle0004" x="357" y="1950" width="360" height="631" frameX="-137" frameY="-60" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak idle0005" x="717" y="1950" width="360" height="631" frameX="-135" frameY="-60" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak idle0006" x="0" y="1950" width="357" height="634" frameX="-130" frameY="-57" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak idle0007" x="2271" y="639" width="346" height="638" frameX="-121" frameY="-53" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak idle0008" x="2271" y="0" width="346" height="639" frameX="-116" frameY="-52" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak idle0009" x="1814" y="643" width="350" height="642" frameX="-111" frameY="-49" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak left0000" x="1359" y="643" width="365" height="642" frameX="-96" frameY="-49" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak left0001" x="459" y="1307" width="368" height="642" frameX="-94" frameY="-49" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak left0002" x="827" y="1307" width="371" height="642" frameX="-92" frameY="-49" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak left0003" x="1198" y="1307" width="373" height="642" frameX="-90" frameY="-49" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak left0004" x="1571" y="1307" width="376" height="642" frameX="-87" frameY="-49" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak right0000" x="339" y="657" width="450" height="643" frameX="-55" frameY="-48" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak right0001" x="789" y="657" width="453" height="643" frameX="-51" frameY="-48" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak right0002" x="1359" y="0" width="455" height="643" frameX="-50" frameY="-48" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak right0003" x="1814" y="0" width="457" height="643" frameX="-49" frameY="-48" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak right0004" x="0" y="1307" width="459" height="643" frameX="-47" frameY="-48" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak up0000" x="0" y="657" width="339" height="650" frameX="-122" frameY="-41" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak up0001" x="1020" y="0" width="339" height="652" frameX="-122" frameY="-40" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak up0002" x="680" y="0" width="340" height="656" frameX="-121" frameY="-38" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak up0003" x="0" y="0" width="340" height="657" frameX="-121" frameY="-37" frameWidth="545" frameHeight="776" />
+<SubTexture name="Kaczak up0004" x="340" y="0" width="340" height="657" frameX="-121" frameY="-37" frameWidth="545" frameHeight="776" />
+</TextureAtlas>

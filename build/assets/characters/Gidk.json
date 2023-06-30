@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				396,
+				-130
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Gidk left"
+		},
+		{
+			"offsets": [
+				410,
+				-89
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Gidk down"
+		},
+		{
+			"offsets": [
+				393,
+				-102
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Gidk up"
+		},
+		{
+			"offsets": [
+				355,
+				-131
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Gidk right"
+		},
+		{
+			"offsets": [
+				394,
+				-186
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "Ded",
+			"indices": [],
+			"name": "Gidk ded"
+		},
+		{
+			"offsets": [
+				422,
+				-161
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "Gidk ded"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Gidk",
+	"position": [
+		200,
+		40
+	],
+	"healthicon": "face",
+	"flip_x": false,
+	"healthbar_colors": [
+		161,
+		161,
+		161
+	],
+	"camera_position": [
+		-350,
+		130
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}
