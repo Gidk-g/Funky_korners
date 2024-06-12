@@ -25,7 +25,7 @@ function goofyAhh1()
     if(FlxG.random.bool(50)) 
     {
         canSomeoneWalk = false;
-        goofy = new BGSprite('date/taiga', -800, -170, 0.9, 0.9, ['taiga']);
+        goofy = new BGSprite('date/taiga', -800, -180, 0.9, 0.9, ['taiga']);
         FlxTween.tween(goofy, {x: 2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween) 
             {
                 goofy.kill();
@@ -37,7 +37,7 @@ function goofyAhh1()
     else
     {
         canSomeoneWalk = false;
-        goofy = new BGSprite('date/taiga', 1800, -170, 0.9, 0.9, ['taiga']);
+        goofy = new BGSprite('date/taiga', 1800, -180, 0.9, 0.9, ['taiga']);
         goofy.flipX = true;
         FlxTween.tween(goofy, {x: -2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween) 
             {
@@ -60,7 +60,7 @@ function goofyAhh2()
     if(FlxG.random.bool(50))
     {
         canSomeoneWalk = false;
-        goofy = new BGSprite('date/wipek', -1300, -180, 0.9, 0.9, ['wipek']);
+        goofy = new BGSprite('date/wipek', -1300, -160, 0.9, 0.9, ['wipek']);
         FlxTween.tween(goofy, {x: 2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween)  
             {
                 goofy.kill();
@@ -72,7 +72,7 @@ function goofyAhh2()
     else
     {
         canSomeoneWalk = false;
-        goofy = new BGSprite('date/wipek', 2300, -180, 0.9, 0.9, ['wipek']);
+        goofy = new BGSprite('date/wipek', 2300, -160, 0.9, 0.9, ['wipek']);
         goofy.flipX = true;
         FlxTween.tween(goofy, {x: -2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween)  
             {
