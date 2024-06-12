@@ -95,7 +95,7 @@ function goofyAhh3()
     if(FlxG.random.bool(50))
     {
         canSomeoneWalk = false;
-        goofy = new BGSprite('date/alienxhoovie', -2000, -170, 0.9, 0.9, ['alien i hoovie']);
+        goofy = new BGSprite('date/alienxhoovie', -2000, -140, 0.9, 0.9, ['alien i hoovie']);
         FlxTween.tween(goofy, {x: 2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween)  
             {
                 goofy.kill();
@@ -107,7 +107,7 @@ function goofyAhh3()
     else
     {
         canSomeoneWalk = false;
-        goofy = new BGSprite('date/alienxhoovie', 3000, -170, 0.9, 0.9, ['alien i hoovie']);
+        goofy = new BGSprite('date/alienxhoovie', 3000, -140, 0.9, 0.9, ['alien i hoovie']);
         goofy.flipX = true;
         FlxTween.tween(goofy, {x: -2945}, 25, {ease: FlxEase.expoOut, onComplete: function(twn:FlxTween)  
             {
